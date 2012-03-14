@@ -188,3 +188,9 @@ docs: $(PROGRAM)
 docs-live: docs
 	cd manual; git add mmd-manual.pdf index.html; \
 	git commit -m "update manual"; git push origin gh-pages; \
+
+install:
+	install -o root -g root -m 555 $(PROGRAM) /usr/local/bin/
+
+deinstall:
+	rm /usr/local/bin/$(PROGRAM)
